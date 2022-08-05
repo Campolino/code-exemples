@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multiply Numeric Property</title>
+</head>
+<body>
+  <script>
+    let menu = {
+      width: 200,
+      height: 300,
+      title: 'My menu',
+    };
+
+    for (key in menu) {
+      console.log(`${key}: ${menu[key]}`);
+    }
+
+    function multiplyNumericProperties(obj) {
+      for (key in obj) {
+        if (typeof(obj[key]) === 'number') {
+          obj[key] = obj[key] * 2;
+        }
+      }
+    }
+
+    multiplyNumericProperties(menu);
+    console.log('After ocject properties multiply by 2');
+    for (key in menu) {
+      console.log(`${key}: ${menu[key]}`);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Object</title>
+</head>
+<body>
+  <script>
+    /* Object key could be defined whit dot notation */
+    let user = {};
+    user['name'] = 'John';
+    user['surname'] = 'Smith';
+
+    for (key in user) {
+      console.log(`${key}: ${user[key]}`);
+    }
+
+    user['name'] = 'Paul';
+    console.log(`${user['name']}`);
+
+    delete user['name'];
+    for (key in user) {
+      console.log(`${key}: ${user[key]}`);
+    }
+
+    console.log(isEmpty(user));
+    
+    /* Function to see if object has key or not */
+    function isEmpty(obj) {
+      if(Object.entries(obj).length === 0) return true;
+      return false;
+    }
+
+    let schedule = {}
+
+    if (isEmpty(schedule)) {
+      schedule['8:30'] = 'get up';
+    }
+
+    
+    for (key in schedule) {
+      alert(`${key}: ${schedule[key]}`);
+    }
+
+  </script>
+</body>
+</html>
